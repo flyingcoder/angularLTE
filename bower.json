@@ -1,0 +1,29 @@
+{
+  "name": "angularLTE",
+  "authors": [
+    "Alvin Pacot <aepacot2016@gmail.com>"
+  ],
+  "description": "Token based angularjs with adminLTE beauty",
+  "main": "app",
+  "keywords": [
+    "angularjs",
+    "adminLTE",
+    "satellizer",
+    "token-based"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "satellizer": "^0.14.0",
+    "angular": "^1.5.3",
+    "angular-animate": "^1.5.3",
+    "angular-bootstrap": "^1.3.1",
+    "angular-messages": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "angular-resource": "^1.5.3",
+    "angular-sanitize": "^1.5.3",
+    "angular-toastr": "^1.7.0",
+    "angular-ui-router": "^0.2.18",
+    "jquery": "^2.2.3"
+  }
+}
