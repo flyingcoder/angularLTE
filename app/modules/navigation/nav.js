@@ -11,5 +11,11 @@
 	    $scope.isAuthenticated = function() {
       			return $auth.isAuthenticated();
       	}
+
+      	$scope.user = {
+      		name: "Alvin",
+      		lastname: "Pacot",
+      		dateJoined: "Jan. 2016"
+      	}
     }
 })();

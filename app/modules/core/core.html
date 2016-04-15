@@ -11,38 +11,22 @@
     <nav class="navbar navbar-static-top" ng-include="'app/modules/navigation/topNav.html'"></nav>
 </header>
 <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar" ng-include="'app/modules/navigation/assideTop.html'"><!-- /.sidebar --></aside>
+<aside class="main-sidebar" ng-include="'app/modules/navigation/asideTop.html'"><!-- /.sidebar --></aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Version 2.0</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
-
-    <!-- Main content -->
-    <section class="content" ui-view></section>
-    <!-- /.content -->
-  </div>
+  <div class="content-wrapper" ui-view></div>
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.3
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong><a href="#">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
 
 <!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark" ng-include="'app/modules/navigation/assideBottom.html'"></aside>
+<aside class="control-sidebar control-sidebar-dark" ng-include="'app/modules/navigation/asideBottom.html'"></aside>
 <!-- /.control-sidebar -->
 <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
