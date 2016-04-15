@@ -24,6 +24,7 @@
     "angular-sanitize": "^1.5.3",
     "angular-toastr": "^1.7.0",
     "angular-ui-router": "^0.2.18",
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.3",
+    "AdminLTE": "admin-lte#^2.3.3"
   }
 }
