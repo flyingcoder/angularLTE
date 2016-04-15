@@ -17,16 +17,17 @@
 
   	function appConfig($stateProvider, $urlRouterProvider, $authProvider) {
 
-		    $stateProvider
-		      .state('app', {
+		$stateProvider
+		    .state('app', {
 		        url: '/app',
 		        controller: 'homeController',
+		        abstract: true,
 		        templateUrl: 'app/modules/core/core.html', //side nav and top nav
 		        resolve: {
 		          loginRequired: loginRequired
 		        }
 		    })
-		      .state('login', {
+		    .state('login', {
 		        url: '/login',
 		        templateUrl: 'app/modules/user/auth/login.html',
 		        controller: 'authController',
@@ -42,15 +43,23 @@
 		          loginRequired: loginRequired
 		        }
 		    })*/
-		      .state('logout', {
+		    .state('logout', {
 		        url: '/logout',
 		        template: null,
 		        controller: 'logoutController'
 		    })
-		      .state('app.user', {
+		    .state('app.user', {
 		        url: '/user',
 		        templateUrl: 'app/modules/user/user.html',
 		        controller: 'ProfileCtrl',
+		        resolve: {
+		          loginRequired: loginRequired
+		        }
+		    })
+		    .state('app.dashboard', {
+		        url: '/dashboard',
+		        templateUrl: 'app/modules/dashboard/dashboard.html',
+		        controller: 'dashboradController',
 		        resolve: {
 		          loginRequired: loginRequired
 		        }
@@ -58,7 +67,10 @@
 
 		$authProvider.loginUrl = '/api/authenticate';
 
-	    $urlRouterProvider.otherwise('/app');
+	    $urlRouterProvider.otherwise(function($injector) {
+	      var $state = $injector.get('$state');
+	      $state.go('app.dashboard');
+	    });
 
 	    function skipIfLoggedIn($q, $auth) {
 	      var deferred = $q.defer();
