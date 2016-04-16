@@ -3,7 +3,8 @@
 
 	angular
 		.module('app')
-		.controller('authController', authController);
+		.controller('authController', authController)
+		.controller('logoutController', logoutController);
 		//.run(runAuth);
 	authController.$inject = ['$scope', '$location', '$auth', 'toastr'];
 	function authController($scope, $location, $auth, toastr) {
@@ -21,13 +22,13 @@
     	}
     }
 
-	/*runAuth.$inject = ['$location', '$rootScope', '$state', '$auth', 'toastr'];
-	function runAuth($location, $rootScope, $state, $auth, toastr) {
+	logoutController.$inject = ['$location', '$rootScope', '$state', '$auth', 'toastr'];
+	function logoutController($location, $rootScope, $state, $auth, toastr) {
 	    if (!$auth.isAuthenticated()) { return; }
 	    $auth.logout()
 	      .then(function() {
 	        toastr.info('You have been logged out');
 	        $location.path('/login');
 	      });
-	}*/
+	}
 })();

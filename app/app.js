@@ -18,6 +18,19 @@
   	function appConfig($stateProvider, $urlRouterProvider, $authProvider) {
 
 		$stateProvider
+			.state('login', {
+		        url: '/login',
+		        templateUrl: 'app/modules/user/auth/login.html',
+		        controller: 'authController',
+		        resolve: {
+		          skipIfLoggedIn: skipIfLoggedIn
+		        }
+		    })
+		    .state('logout', {
+		        url: '/logout',
+		        template: null,
+		        controller: 'logoutController'
+		    })
 		    .state('app', {
 		        url: '/app',
 		        controller: 'homeController',
@@ -27,31 +40,18 @@
 		          loginRequired: loginRequired
 		        }
 		    })
-		    .state('login', {
-		        url: '/login',
-		        templateUrl: 'app/modules/user/auth/login.html',
-		        controller: 'authController',
-		        resolve: {
-		          skipIfLoggedIn: skipIfLoggedIn
-		        }
-		    })
-		      /*.state('signup', {
-		        url: '/signup',
-		        templateUrl: 'partials/signup.html',
-		        controller: '',
+		     .state('app.createUser', {
+		        url: '/user/create',
+		        templateUrl: 'app/modules/user/new/create.html',
+		        controller: 'createUserController',
 		        resolve: {
 		          loginRequired: loginRequired
 		        }
-		    })*/
-		    .state('logout', {
-		        url: '/logout',
-		        template: null,
-		        controller: 'logoutController'
 		    })
 		    .state('app.user', {
 		        url: '/user',
 		        templateUrl: 'app/modules/user/user.html',
-		        controller: 'ProfileCtrl',
+		        controller: 'accountController',
 		        resolve: {
 		          loginRequired: loginRequired
 		        }
@@ -59,7 +59,7 @@
 		    .state('app.dashboard', {
 		        url: '/dashboard',
 		        templateUrl: 'app/modules/dashboard/dashboard.html',
-		        controller: 'dashboradController',
+		        controller: 'dashboardController',
 		        resolve: {
 		          loginRequired: loginRequired
 		        }

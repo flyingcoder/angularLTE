@@ -8,6 +8,6 @@
 	homeController.$inject = ['$scope', '$state', '$rootScope'];
 
 	function homeController($scope, $state, $rootScope) {
-		$scope.name = "alvin";
+		
 	}
 })();
